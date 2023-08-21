@@ -1,0 +1,166 @@
+body {
+  background-image: url('static/image.JPG'); /* Replace 'path/to/your/background-image.jpg' with the actual URL or relative path of your background image */
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.or {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  position: relative;
+  margin-top:-0.80px;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  font-family: 'Roboto', sans-serif;
+  color: #050101;
+  font-weight: 100;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-agileinfo {
+  width: 35%;
+  margin: 2em auto;
+  background: rgba(0, 0, 0, 0.18);
+  background-size: cover;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.agileits-top {
+  padding: 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 0.9em;
+  color: #0a0202;
+  font-weight: 100;
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 0.8em;
+  border: solid 1px rgba(255, 255, 255, 0.37);
+  background-image: url('path/to/your/input-background.jpg'); /* Replace 'path/to/your/input-background.jpg' with the actual URL or relative path of your input background image */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #070000;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1em;
+  border-radius: 20px;
+}
+
+
+input[type="submit"] {
+  font-size: 0.9em;
+  color: #0a0101;
+  background: rgba(103, 76, 46, 0.27);
+  outline: none;
+  border: 1px solid rgba(2, 203, 250, 0.27);
+  cursor: pointer;
+  padding: 0.9em;
+  width: 100%;
+  letter-spacing: 4px;
+  border-radius: 20px;
+  margin:  0;
+}
+.colorlib-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .colorlib-bubbles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(229, 245, 244);
+            bottom: -160px;
+            animation: animate 25s linear infinite;
+            transition-timing-function: linear;
+        }
+
+        .colorlib-bubbles li:nth-child(1) {
+            left: 10%;
+        }
+
+        .colorlib-bubbles li:nth-child(2) {
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 2s;
+            animation-duration: 17s;
+        }
+
+        .colorlib-bubbles li:nth-child(3) {
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        .colorlib-bubbles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 22s;
+            background-color: rgb(238, 250, 249);
+        }
+
+        .colorlib-bubbles li:nth-child(5) {
+            left: 70%;
+        }
+
+        .colorlib-bubbles li:nth-child(6) {
+            left: 80%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            background-color: rgb(232, 248, 248);
+        }
+
+        .colorlib-bubbles li:nth-child(7) {
+            left: 32%;
+            width: 160px;
+            height: 160px;
+            animation-delay: 7s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+                border-radius: 30%;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+
+
+
+
