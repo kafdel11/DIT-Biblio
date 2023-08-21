@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>A Propos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('static/arii.JPG');
+            background-size: cover;
+            background-color: #d2cbc3;
+            margin: auto;
+            color: #010909;
+            overflow-x: hidden;
+            position: relative; /* Ajout pour les bulles animées */
+        }
+        .footer
+        {
+            margin-left:130px;
+        }
+        h1 {
+      font-size: 2em;
+      margin: auto;
+      padding: ;
+         }
+        p{
+            font-size: 1em;
+        }
+
+        .navbar {
+            background-color: #d7d0cd;
+        }
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            padding: 5px;
+        }
+        .carousel-item img {
+            max-height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contenu {
+            padding: 50px 20px;
+            text-align: center;
+            color: #090909;
+        }
+
+        .colorlib-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .colorlib-bubbles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(243, 232, 248);
+            bottom: -160px;
+            animation: animate 25s linear infinite;
+            transition-timing-function: linear;
+        }
+
+        .colorlib-bubbles li:nth-child(1) {
+            left: 10%;
+        }
+        .des
+        {
+            margin-top:-60px;
+        }
+
+        .colorlib-bubbles li:nth-child(2) {
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 2s;
+            animation-duration: 17s;
+        }
+
+        .colorlib-bubbles li:nth-child(3) {
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        .colorlib-bubbles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 22s;
+            background-color: rgb(243, 232, 248);
+        }
+
+        .colorlib-bubbles li:nth-child(5) {
+            left: 70%;
+        }
+
+        .colorlib-bubbles li:nth-child(6) {
+            left: 80%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            background-color: rgb(243, 232, 248);
+        }
+
+        .colorlib-bubbles li:nth-child(7) {
+            left: 32%;
+            width: 160px;
+            height: 160px;
+            animation-delay: 7s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+                border-radius: 30%;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='logodit.JPG') }}" alt="Logo"/>
+            </a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Apropos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="biblio">Bibliothèque</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contenu">
+        <body>
+    <div id="header">
+    <h1>Bienvenue dans la Bibliothèque du DIT</h1>
+</div>
+
+<div id="content">
+    <p>Nous sommes ravis de vous accueillir dans cet espace numérique dédié à l'apprentissage, à l'exploration et à la découverte du vaste univers de l'informatique. Que vous soyez un débutant enthousiaste ou un expert chevronné, notre bibliothèque virtuelle a été soigneusement conçue pour répondre à vos besoins et vous accompagner tout au long de votre parcours.</p>
+
+    <h2>Notre Engament envers Vous :</h2>
+    <p>Nous sommes profondément engagés à vous offrir une expérience enrichissante au sein de notre bibliothèque en ligne. Grâce à notre collection diversifiée et à jour, vous aurez accès à une mine de ressources précieuses qui vous aideront à approfondir vos connaissances en informatique, à relever de nouveaux défis et à vous tenir au courant des dernières tendances technologiques.</p>
+
+    <h2>Ce Que Vous Trouverez :</h2>
+    <ul>
+        <li>Livres Spécialisés : Plongez dans notre sélection soigneusement élaborée de livres couvrant une multitude de domaines de l'informatique. Des langages de programmation aux concepts avancés en passant par l'intelligence artificielle et la cybersécurité, vous découvrirez des ressources riches et pertinentes.</li>
+        <li>Documentation Complète : Notre bibliothèque propose également une documentation complète comprenant des manuels, des guides et des tutoriels. Ces documents vous accompagneront dans vos projets, vous guideront dans l'utilisation d'outils et vous aideront à résoudre des problèmes spécifiques.</li>
+        <li>Ressources Multimédias : Apprenez de manière interactive grâce à notre gamme de ressources multimédias. Des vidéos éducatives, des présentations visuelles et des cours en ligne vous offriront une approche diversifiée et captivante pour assimiler de nouvelles compétences.</li>
+        <li>Support de Projet : Lorsque vous vous lancez dans des projets informatiques passionnants, notre bibliothèque en ligne est là pour vous soutenir. Trouvez des conseils pratiques, des exemples de projets réussis et des astuces pour mener à bien vos initiatives.</li>
+        <li>Mises à Jour Régulières : Notre engagement envers l'excellence se reflète dans les mises à jour régulières de notre collection. Vous resterez informé des avancées technologiques et des développements récents, vous permettant ainsi de rester à la pointe de l'informatique.</li>
+    </ul>
+
+    <p>Joignez notre communauté d'apprenants passionnés. Explorez librement notre bibliothèque, empruntez les livres qui vous captivent et profitez de toutes les ressources mises à votre disposition. Que ce soit pour étudier, réaliser des projets personnels ou simplement assouvir votre curiosité, notre bibliothèque est là pour vous accompagner.</p>
+</div>
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+<div id="contact">
+    <h2>Nous Contacter :</h2>
+    <p>Besoin d'aide ou de renseignements supplémentaires ? N'hésitez pas à nous contacter :</p>
+    <ul>
+        <li>Adresse : Immeuble 46, Cité Keur Gorgui, Dakar</li>
+        <li>Téléphone : +221 773 089 292</li>
+        <li>E-mail : info@dit.sn</li>
+        <li>Site Web : <a href="https://www.dit.sn">www.dit.sn</a></li>
+    </ul>
+</div>
+
+<div id="footer">
+    <p>© DAKAR INSTITUTE OF TECHNOLOGY. Tous droits réservés.</p>
+</div>
+</div>
+
+    <!-- Bulles animées -->
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</body>
+
+</html>

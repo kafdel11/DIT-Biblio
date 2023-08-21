@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ma Bibliothèque</title>
+    <style>
+        /* Reset CSS and other style rules */
+        body {
+            background-image: url('static/image.JPG');
+            background-size: cover;
+            margin: auto;
+            color: #010909;
+            overflow-x: hidden;
+            position: relative; /* Ajout pour les bulles animées */
+        }
+
+        /* Navigation bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #cec2bd;
+            border-bottom: 1px solid #000; /* Bordure fine en bas de la barre de navigation */
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000; /* Couleur noire */
+        }
+
+        li a:hover {
+            background-color: #d0cac7; /* Couleur gris plus foncé au survol */
+            color: #fff; /* Couleur blanche au survol */
+        }
+
+        /* Centered Table Container */
+        .table-container {
+            width: 95%;
+            margin: 80px auto 0;
+            border: 2px solid #000; /* Bordure noire autour du conteneur */
+            background-color: #fcf7f1; /* Couleur blanche pour le conteneur */
+            position: relative;
+            z-index: 0;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center; /* Centrer le texte dans les cellules */
+            border: 1px solid #000; /* Bordures noires */
+            word-wrap: break-word;
+        }
+
+        th {
+            background-color: #f5efe5; /* Couleur bleu-vert */
+            color: #010909; /* Couleur blanche */
+            position: sticky;
+            top: 60px; /* Fixe la ligne d'en-tête juste sous la barre de navigation */
+            z-index: 2;
+        }
+
+        /* Fixer la ligne d'en-tête directement sous la barre de navigation */
+        tr:first-child {
+            position: sticky;
+            top: 35px; /* Hauteur de la barre de navigation */
+            z-index: 2;
+            background-color: #d0cac7; /* Couleur bleu-vert clair */
+        }
+
+
+        /* Réduction de la taille du logo */
+        .navbar-brand img {
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Navigation bar -->
+<nav>
+    <ul>
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logodit.JPG') }}" alt="Logo"/>
+        </a>
+        <li><a href="Apropos">A propos</a></li>
+        <li><a href="admin">Dashboard</a></li>
+        {% if session.get('id_user') %}
+                <li><a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+
+<!-- Centered Table Container -->
+<div class="table-container">
+    <!-- Table -->
+    <table>
+        <tr>
+            <th>Titres</th>
+            <th>Auteurs</th>
+            <th>Edition-Année</th>
+            <th>Action</th>
+        </tr>
+        {% for livre in Livre %}
+            <tr>
+                <td>{{ livre[1] }}</td>
+                <td>{{ livre[2] }}</td>
+                <td>{{ livre[3] }}</td>
+                <td>
+                    {% if livre[4] == 'Disponible' %}
+                    <form method="post">
+                        <input type="hidden" name="livre_id" value="{{ livre[0] }}">
+                        <input type="submit" value="Emprunter">
+                    </form>
+                    {% else %}
+                        Indisponible
+                    {% endif %}
+                </td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- Bubbles -->
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>A Propos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signe-propos.css') }}">
+        <style>
+        body {
+            background-image: url('static/image.JPG');
+            background-size: cover;
+            margin: auto;
+            color: #010909;
+             overflow-x: hidden;
+            position: relative; /* Ajout pour les bulles animées */
+        }
+        .footer
+        {
+            margin-left:130px;
+        }
+
+        .navbar {
+            background-color: #cec2bd;
+        }
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            padding: 5px;
+        }
+        .carousel-item img {
+            max-height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contenu {
+            padding: 50px 20px;
+            text-align: center;
+            color: #010909;
+        }
+
+        .colorlib-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .colorlib-bubbles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(229, 245, 244);
+            bottom: -160px;
+            animation: animate 25s linear infinite;
+            transition-timing-function: linear;
+        }
+
+        .colorlib-bubbles li:nth-child(1) {
+            left: 10%;
+        }
+
+        .colorlib-bubbles li:nth-child(2) {
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 2s;
+            animation-duration: 17s;
+        }
+
+        .colorlib-bubbles li:nth-child(3) {
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        .colorlib-bubbles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 22s;
+            background-color: rgb(238, 250, 249);
+        }
+
+        .colorlib-bubbles li:nth-child(5) {
+            left: 70%;
+        }
+
+        .colorlib-bubbles li:nth-child(6) {
+            left: 80%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            background-color: rgb(232, 248, 248);
+        }
+
+        .colorlib-bubbles li:nth-child(7) {
+            left: 32%;
+            width: 160px;
+            height: 160px;
+            animation-delay: 7s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+                border-radius: 30%;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+    </style>
+     <title>bibliotheque.DIT</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='logodit.JPG') }}" alt="Logo"/>
+            </a>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Apropos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="biblio">Bibliothèque</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contenu">
+        <h1>Bienvenue!</h1>
+        <p>Nous sommes ravis de vous accueillir dans notre espace dédié à l'apprentissage et à la recherche. Que vous soyez
+            à la recherche de ressources pour approfondir vos connaissances, préparer vos cours ou simplement vous plonger
+            dans un bon livre, notre bibliothèque est là pour répondre à vos besoins.</p>
+        <p>Que vous cherchiez à approfondir vos connaissances, à préparer vos cours ou tout simplement
+            à vous plonger dans un bon livre, vous trouverez ici une multitude de documents et de supports
+            variés pour satisfaire votre soif de savoir. Notre bibliothèque virtuelle offre un accès facile
+            et rapide à une richesse de contenus pertinents, allant des livres et articles spécialisés aux tutoriels et vidéos éducatives.</p>
+
+    <p>Naviguez à travers nos différentes catégories, explorez les dernières tendances technologiques, découvrez les langages de programmation
+        émergents et trouvez des réponses à vos questions les plus pointues. Notre mission est de vous offrir un environnement propice à l'apprentissage
+        et à la découverte, où vous pourrez développer vos compétences et vous épanouir dans le domaine de l'informatique.</p>
+        <p></p>
+    </div>
+    <div class="row justify-content-center">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+            <ol class="carousel-indicators">
+                {% for image in images %}
+                <li data-bs-target="#carouselId" data-bs-slide-to="{{ loop.index0 }}"
+                    class="{% if loop.index0 == 0 %}active{% endif %}" aria-current="true"
+                    aria-label="Slide {{ loop.index }}"></li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                {% for image in images %}
+                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
+                    <img src="{{ url_for('static', filename=image) }}" class="d-block" alt="Slide {{ loop.index }}">
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="colorlib-bubbles">
+        <!-- Bulles animées -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div color="green", class="footer">
+        <p>© DAKAR INTITUTE OF TECHNOLOGY ./immeuble46,cite keur gorgui ,Dakar Tel:+221773089292 E-mail:info@dit.sn <a
+            href="https://dit.sn" target="_blank" width="200px">Notre site officiel </a></p>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>

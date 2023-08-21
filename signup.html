@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INSCRIPTION</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="style-signe.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style-signupgood.css') }}">
+
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+	<style>
+    body {
+      background-image: url('static/image.JPG'); /* Replace 'path/to/your/background-image.jpg' with the actual URL or relative path of your background image */
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 20px;
+      padding: 0px;
+    }
+
+    .colorlibcopy-agile p {
+      color: #fff;
+      line-height: 1.8em;
+      letter-spacing: 1px;
+      font-weight: 100;
+      padding: 0; /* J'ai réduit la marge inférieure à 0.5em */
+    }
+
+    </style>
+</head>
+<body>
+	<!-- main -->
+
+	<div class="main-agileinfo">
+    <div class="agileits-top">
+        <form action="{{ url_for('signup') }}" method="post">
+            <div class="or">
+                <h1>INSCRIPTION</h1>
+                <input class="text" type="text" name="name" placeholder="Nom(s)" required="">
+                <input class="text" type="text" name="surname" placeholder="Prenom(s)" required="">
+                <input class="text" type="text" name="user_name" placeholder="Nom d'utilisateur" required="">
+                <input class="text email" type="email" name="e_mail" placeholder="Email" required="">
+                <input class="text" type="password" name="password" placeholder="Mot de passe"required="">
+                <input class="text w3lpass" type="password" name="Confirmer" placeholder="Confirmer" required="">
+
+                    <label class="anim">
+                        <input type="checkbox" class="checkbox" required="">
+                        <span>J'accepte les termes & Conditions</span>
+                    </label>
+                </div>
+            <div class="wthree-text">
+                {% if error_message %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error_message }}
+                </div>
+                {% endif %}
+                {% if success_message %}
+                <div class="alert alert-success" role="alert">
+                    {{ success_message }}
+                </div>
+                {% endif %}
+                <input style="margin-top: 50px;" type="submit" value="S'inscrire">
+            </div>
+        </form>
+        <p> <a href="/Login"> Connecter maintenant !</a></p></br>
+    </div>
+</div>
+	<!-- //main -->
+		 <div class="colorlib-bubbles">
+        <!-- Bulles animées -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

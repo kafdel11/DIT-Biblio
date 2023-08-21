@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CONNEXION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-logingood.css') }}">
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+    <style>
+    body {
+      background-image: url('static/image.JPG'); /* Replace 'path/to/your/background-image.jpg' with the actual URL or relative path of your background image */
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 20px;
+      padding: 0px;
+    }
+
+    .colorlibcopy-agile p {
+      color: #fff;
+      line-height: 1.8em;
+      letter-spacing: 1px;
+      font-weight: 100;
+      padding: 0; /* J'ai réduit la marge inférieure à 0.5em */
+    }
+
+    </style>
+</head>
+<body>
+    <!-- main -->
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/login" method="post">
+                    <div class="or">
+                        <h1>CONNEXION</h1>
+                    <input class="text" type="text" name="user_name" placeholder="Nom d'utilisateur" required=""><br>
+                    <input class="text" type="password" name="password" placeholder="Mot de passe"required=""><br>
+
+                    <input onclick="alert_message()" type="submit" value="Connecter">
+                         </div>
+                </form>
+                <p> <a href="/signup"> S'inscrire maintenant !</a></p>
+            </div>
+         </div>
+    <script>
+    // JavaScript pour afficher les messages d'erreur et de succès
+    function alert_message(){
+        alert({{error_message}})
+    }
+</script>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            <p>©© DAKAR INSTITUTE OF TECHNOLOGY ./immeuble46,cite keur gorgui ,Dakar Tel:+221773089292 E-mail:info@dit.sn <a  target="_blank"></a></p>
+        </div>
+        <!-- //copyright -->
+
+    </div>
+    <div class="colorlib-bubbles">
+        <!-- Bulles animées -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+</body>
+</html>
